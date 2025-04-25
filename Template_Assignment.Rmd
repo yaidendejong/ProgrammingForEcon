@@ -17,6 +17,8 @@ require(tidyverse)
 
 # Part 1 - Identify a Social Problem
 
+Use APA referencing throughout your document.
+
 ## 1.1 Describe the Social Problem
 
 Include the following:
@@ -32,9 +34,10 @@ Include the following:
 Preferably from a URL, but if not, make sure to download the data and store it in a shared location that you can load the data in from. Do not store the data in a folder you include in the Github repository!
 
 ```{r loading_data}
-# cars is an example dataset included in the tidyverse package
 dataset <- cars
 ```
+
+cars is an example dataset included in the tidyverse package
 
 ### Provide a short summary of the dataset(s)
 
@@ -58,59 +61,66 @@ Think of things like:
 
 ## 2.1 Data cleaning
 
-Please use a separate 'R block' of code for each type of cleaning. So, e.g. one for missing values, a new one for removing unnecessary variables etc.
+Say we want to include only larger distances (above 2) in our dataset, we can filter for this.
 
 ```{r data_cleaning}
-
+dataset <- dataset %>% filter(dist > 2)
 ```
+
+Please use a separate 'R block' of code for each type of cleaning. So, e.g. one for missing values, a new one for removing unnecessary variables etc.
 
 ## 2.2 Generate necessary variables
 
 Variable 1
 
 ```{r gen_var1}
-
+dataset$duration <- dataset$speed / dataset$dist
 ```
 
 Variable 2
 
 ```{r gen_var2}
-
+dataset$duration <- dataset$speed / dataset$dist
 ```
 
 ## 2.3 Visualize distributions and relationships
 
-Visualize variable 1
+This is way too simple an example, but is just meant for your understanding of the expected markdown structure.
 
 ```{r visualize_var1}
-
+hist(dataset$duration)
 ```
 
-Visualize variable 2
+Idem for variable 2.
 
 ```{r visualize_var2}
-
+hist(dataset$speed)
 ```
 
-Visualize relationship between two variables
+Visualize relationship between two variables. Again this is way too simple an example, but is just meant for your understanding of the expected markdown structure.
 
 ```{r visualize_relationship}
-
+cor(dataset$dist, dataset$speed)
 ```
 
 ## 2.4 Analysis
 
-Analyze the relationship between two variables
+Analyze the relationship between two variables. Again this is way too simple an example, but is just meant for your understanding of the expected markdown structure.
 
 ```{r analysis}
-
+glm(duration ~ speed, data = dataset) %>%
+  summary()
 ```
 
 # Part 3 - Report
 
 ## 3.1 Discuss your findings
 
+See assignment hand-out for the guidelines.
+
 ## 3.2 Provide a description of the input of each project member
+
+See assignment hand-out for the guidelines.
 
 # Part 4 - Reproducibility
 
@@ -119,3 +129,5 @@ Analyze the relationship between two variables
 Provide the link here: ...
 
 ## 4.2 Reference list
+
+Use APA referencing throughout your document.
