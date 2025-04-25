@@ -6,11 +6,59 @@ output: pdf_document
 ---
 
 # Set-up your environment
-```{r}
+
+Run this below only once!
+
+```{r include=FALSE}
+install.packages("tidyverse")
+```
+
+```{r packages needed}
+require(tidyverse)
+```
+
+# Assignment part 1 - Go/no Go
+
+## 1.1 Identify the Social Problem
+
+### Why is this relevant?
+
+## 1.2 Data Sourcing
+
+### Load in the data
+
+Preferably from a URL, but if not, make sure to download the data and store it in a shared location that you can load the data in from. Do not store the data in a folder you include in the Github repository!
+
+```{r load in data}
 
 ```
 
-# Describe Social Problem
+### Provide a short summary/explanation
 
+### Describe the type of variables included
 
-# 
+## 1.3 Reference list
+
+# Assignment part 2 - Quantifying
+
+## 2.1 Data cleaning
+
+Please use a seperate 'R block' of code for each type of cleaning. So, e.g. one for missing values, a new one for removing unnecessary variables etc.
+
+```{r data cleaning}
+
+```
+
+## 2.2 Generate necessary variables
+
+## 2.3 Visualize distributions and relationships
+
+## 2.4 Analysis
+
+# Assignment part 3 - Report
+
+# Assignment part 4 - Reproducibility
+
+## Github repository link
+
+Provide the link here: ...
