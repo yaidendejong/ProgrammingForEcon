@@ -34,7 +34,7 @@ Include the following:
 Preferably from a URL, but if not, make sure to download the data and store it in a shared location that you can load the data in from. Do not store the data in a folder you include in the Github repository!
 
 ```{r loading_data}
-dataset <- cars
+dataset <- midwest
 ```
 
 cars is an example dataset included in the tidyverse package
@@ -42,12 +42,12 @@ cars is an example dataset included in the tidyverse package
 ### Provide a short summary of the dataset(s)
 
 ```{r}
-summary(dataset)
+head(dataset)
 ```
 
-In this case we see two variables, speed and distance but we miss information on what units they are in. km/hour? Or meters/second?
+In this case we see 28 variables, but we miss some information on what units they are in. km/hour? Or meters/second? We also don't know anything about the year/moment in which this data has been captured.
 
-These are things that are usually included in the metadata of the dataset. Provide us with the information from your metadata that we need to understand your dataset of choice.
+These are things that are usually included in the metadata of the dataset. For your project, you need to provide us with the information from your metadata that we need to understand your dataset of choice.
 
 ### Describe the type of variables included
 
@@ -57,6 +57,8 @@ Think of things like:
 
 -   Have they been measured by interviewing individuals or is the data coming from administrative sources?
 
+*For the sake of this example, I will continue with the assignment...*
+
 # Part 2 - Quantifying
 
 ## 2.1 Data cleaning
@@ -64,7 +66,7 @@ Think of things like:
 Say we want to include only larger distances (above 2) in our dataset, we can filter for this.
 
 ```{r data_cleaning}
-dataset <- dataset %>% filter(dist > 2)
+mean(dataset$percollege)
 ```
 
 Please use a separate 'R block' of code for each type of cleaning. So, e.g. one for missing values, a new one for removing unnecessary variables etc.
@@ -83,7 +85,7 @@ Variable 2
 dataset$duration <- dataset$speed / dataset$dist
 ```
 
-## 2.3 Visualize distributions and relationships
+## 2.3 Visualize temporal variation
 
 This is way too simple an example, but is just meant for your understanding of the expected markdown structure.
 
@@ -103,7 +105,11 @@ Visualize relationship between two variables. Again this is way too simple an ex
 cor(dataset$dist, dataset$speed)
 ```
 
-## 2.4 Analysis
+## 2.4 Visualize spatial variation
+
+## 2.5 Visualize sub-population variation
+
+## 2.6 Event analysis
 
 Analyze the relationship between two variables. Again this is way too simple an example, but is just meant for your understanding of the expected markdown structure.
 
@@ -112,13 +118,9 @@ glm(duration ~ speed, data = dataset) %>%
   summary()
 ```
 
-# Part 3 - Report
+# Part 3 - Discussion
 
 ## 3.1 Discuss your findings
-
-See assignment hand-out for the guidelines.
-
-## 3.2 Provide a description of the input of each project member
 
 See assignment hand-out for the guidelines.
 
@@ -126,7 +128,7 @@ See assignment hand-out for the guidelines.
 
 ## 4.1 Github repository link
 
-Provide the link here: ...
+Provide the link to your PUBLIC repository here: ...
 
 ## 4.2 Reference list
 
