@@ -15,6 +15,14 @@ install.packages("tidyverse")
 require(tidyverse)
 ```
 
+# Title Page
+
+Include your names
+
+Include the tutorial group number
+
+Include your tutorial lecturer's name
+
 # Part 1 - Identify a Social Problem
 
 Use APA referencing throughout your document.
@@ -27,9 +35,9 @@ Include the following:
 
 -   ...
 
-## 1.2 Data Sourcing
+# Part 2 - Data Sourcing
 
-### Load in the data
+## 2.1 Load in the data
 
 Preferably from a URL, but if not, make sure to download the data and store it in a shared location that you can load the data in from. Do not store the data in a folder you include in the Github repository!
 
@@ -37,19 +45,19 @@ Preferably from a URL, but if not, make sure to download the data and store it i
 dataset <- midwest
 ```
 
-cars is an example dataset included in the tidyverse package
+midwest is an example dataset included in the tidyverse package
 
-### Provide a short summary of the dataset(s)
+## 2.2 Provide a short summary of the dataset(s)
 
 ```{r}
 head(dataset)
 ```
 
-In this case we see 28 variables, but we miss some information on what units they are in. km/hour? Or meters/second? We also don't know anything about the year/moment in which this data has been captured.
+In this case we see 28 variables, but we miss some information on what units they are in. We also don't know anything about the year/moment in which this data has been captured.
 
 These are things that are usually included in the metadata of the dataset. For your project, you need to provide us with the information from your metadata that we need to understand your dataset of choice.
 
-### Describe the type of variables included
+## 2.3 Describe the type of variables included
 
 Think of things like:
 
@@ -59,9 +67,9 @@ Think of things like:
 
 *For the sake of this example, I will continue with the assignment...*
 
-# Part 2 - Quantifying
+# Part 3 - Quantifying
 
-## 2.1 Data cleaning
+## 3.1 Data cleaning
 
 Say we want to include only larger distances (above 2) in our dataset, we can filter for this.
 
@@ -71,65 +79,77 @@ mean(dataset$percollege)
 
 Please use a separate 'R block' of code for each type of cleaning. So, e.g. one for missing values, a new one for removing unnecessary variables etc.
 
-## 2.2 Generate necessary variables
+## 3.2 Generate necessary variables
 
 Variable 1
 
 ```{r gen_var1}
-dataset$duration <- dataset$speed / dataset$dist
+
 ```
 
 Variable 2
 
 ```{r gen_var2}
-dataset$duration <- dataset$speed / dataset$dist
+
 ```
 
-## 2.3 Visualize temporal variation
+## 3.3 Visualize temporal variation
 
-This is way too simple an example, but is just meant for your understanding of the expected markdown structure.
+```{r}
 
-```{r visualize_var1}
-hist(dataset$duration)
 ```
 
-Idem for variable 2.
+## 3.4 Visualize spatial variation
 
-```{r visualize_var2}
-hist(dataset$speed)
+```{r visualise_map}
+
 ```
 
-Visualize relationship between two variables. Again this is way too simple an example, but is just meant for your understanding of the expected markdown structure.
+Here you provide a description of why the plot above is relevant to your specific social problem.
 
-```{r visualize_relationship}
-cor(dataset$dist, dataset$speed)
+## 3.5 Visualize sub-population variation
+
+What is the poverty rate by state?
+
+```{r visualise_subpopulations}
+
+# Boxplot of poverty rate by state using the 'midwest' dataset
+ggplot(dataset, aes(x = state, y = percadultpoverty, fill = state)) +
+  geom_boxplot() +
+  labs(
+    title = "Distribution of Poverty Rates by State (Midwest counties)",
+    x = "State",
+    y = "Poverty Rate of Adults (%)",
+    fill = "State"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "right"
+  )
 ```
 
-## 2.4 Visualize spatial variation
+Here you provide a description of why the plot above is relevant to your specific social problem.
 
-## 2.5 Visualize sub-population variation
+## 3.6 Event analysis
 
-## 2.6 Event analysis
-
-Analyze the relationship between two variables. Again this is way too simple an example, but is just meant for your understanding of the expected markdown structure.
+Analyze the relationship between two variables.
 
 ```{r analysis}
-glm(duration ~ speed, data = dataset) %>%
-  summary()
+
 ```
 
-# Part 3 - Discussion
+Here you provide a description of why the plot above is relevant to your specific social problem.
 
-## 3.1 Discuss your findings
+# Part 4 - Discussion
 
-See assignment hand-out for the guidelines.
+## 4.1 Discuss your findings
 
-# Part 4 - Reproducibility
+# Part 5 - Reproducibility
 
-## 4.1 Github repository link
+## 5.1 Github repository link
 
 Provide the link to your PUBLIC repository here: ...
 
-## 4.2 Reference list
+## 5.2 Reference list
 
 Use APA referencing throughout your document.
