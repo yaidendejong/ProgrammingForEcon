@@ -112,15 +112,14 @@ Here you provide a description of why the plot above is relevant to your specifi
 What is the poverty rate by state?
 
 ```{r visualise_subpopulations}
-
+dataset$inmetro <- dataset$inmetro %>% as.factor()
 # Boxplot of poverty rate by state using the 'midwest' dataset
-ggplot(dataset, aes(x = state, y = percadultpoverty, fill = state)) +
+ggplot(dataset, aes(x = inmetro, y = percadultpoverty)) +
   geom_boxplot() +
   labs(
-    title = "Distribution of Poverty Rates by State (Midwest counties)",
-    x = "State",
-    y = "Poverty Rate of Adults (%)",
-    fill = "State"
+    title = "Distribution of Poverty Rates by Metropolitan status (Midwest counties)",
+    x = "Metropolitan Area",
+    y = "Poverty Rate of Adults (%)"
   ) +
   theme_minimal() +
   theme(
