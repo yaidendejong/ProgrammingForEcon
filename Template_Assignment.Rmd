@@ -173,5 +173,9 @@ jenno is cooked en hij heeft een virus
 
 push push
 
+<<<<<<< HEAD
 
 wtf gebeurt hier
+=======
+vaag systeem
+>>>>>>> 5552dc77e68b99fe97314313b0160d78510868ce
