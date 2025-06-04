@@ -172,3 +172,12 @@ blabla
 
 
 >>>>>>> dc3d6eb01e47b8a4f848fd3bd19e81d6920353ad
+
+push push
+
+<<<<<<< HEAD
+help kan ik weer typen?
+wtf gebeurt hier
+=======
+vaag systeem
+>>>>>>> 5552dc77e68b99fe97314313b0160d78510868ce
