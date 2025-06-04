@@ -157,7 +157,16 @@ Provide the link to your PUBLIC repository here: ...
 
 Use APA referencing throughout your document.
 
+<<<<<<< HEAD
 "hello world"
 
 
-Test test
+Test testTest test
+=======
+"hello darkness my old friend"
+
+
+jenno is cooked en hij heeft een virus
+
+
+>>>>>>> dc3d6eb01e47b8a4f848fd3bd19e81d6920353ad
